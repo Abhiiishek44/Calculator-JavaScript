@@ -1,0 +1,71 @@
+
+/*Calculator Body*/ 
+body{
+    background-color: #b1cef1;
+}
+.calc-body {
+    width: 290px;
+    margin: auto;
+    min-height: 400px;
+    box-shadow: 0 8px 50px -7px black;
+    background: #3A4655;
+}
+/*Calculator Display Screen*/
+.calc-screen {
+    padding: 1rem; 
+}
+#calc-operation {
+    font-size: 1.3rem;
+    text-align: right;
+    color: #727B86;
+    padding-bottom: .5rem;
+}
+#calc-typed { 
+    height: 35px;
+    font-size: 2rem;
+    text-align: right;
+    color: #fff;  
+    /* border: 1px solid rgb(59, 204, 45); */
+}
+/*Calculator Buttons*/
+.calc-button-row{
+    display: table;
+}
+.calc-button-row button {
+    display: table-cell;
+    width: 25%;
+    background: #425062;
+    color: #fff;
+    height: 65px;
+    font-size: 1.3rem;
+    border: none;
+    border-color:#3C4857;
+    border-width: 1px 1px 0px 0;
+    border-style: solid;
+}
+.calc-button-row button.ac {
+    color: #ff7665;
+}
+.calc-button-row button.opt {
+    color: #ffbc56;
+}
+/*The border has been managed in every fourth button so that the design will not distract.*/
+.calc-button-row button:nth-child(4n){
+    border-right: none;
+}
+.calc-button-row button:active {
+    position: relative;
+    top: 2px;
+}
+.calc-button-row button:hover {
+    background: #3e4b5c;
+} 
+.heading{
+    display: flex;
+    justify-content: center;
+} 
+.heading h1{
+    color: #0f9d35; 
+   font-weight: 900; 
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}

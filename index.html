@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <div class="heading">
+        <h1>Caculator</h1>
+     </div>
+   
+    <!-- Calculator Body -->
+    <div class="calc-body">
+
+        <!-- Calculator Display Screen -->
+        <div class="calc-screen">
+            <div id="calc-operation">1234 + 567 + </div>
+            <div id="calc-typed"></div>
+        </div>
+
+        <!-- Calculator Buttons -->
+        <div class="calc-button-row">
+            <button class="ac">AC</button>
+            <button class="opt">&#43;&#47;&#8722;</button>
+            <button class="opt disVal">%</button>
+            <button class="opt disVal">/</button>
+            <button class="disVal">7</button>
+            <button class="disVal">8</button>
+            <button class="disVal">9</button>
+            <button class="opt disVal">*</button>
+            <button class="disVal">4</button>
+            <button class="disVal">5</button>
+            <button class="disVal">6</button>
+            <button class="opt disVal">-</button>
+            <button class="disVal">1</button>
+            <button class="disVal">2</button>
+            <button class="disVal">3</button>
+            <button class="opt disVal" id="add">+</button>
+            <button class="disVal">0</button>
+            <button class="disVal">.</button>
+            <button>⌫</button>
+            <button class="opt">=</button>
+        </div>
+    </div>
+    <script>
+        let Buttons = document.querySelectorAll("button");
+        let disVal = document.querySelector("#calc-typed")
+        let ACs = document.querySelector(".ac")
+        let string = "";
+        ACs.addEventListener("click", function () {
+            disVal.innerText = ""
+        })
+        Array.from(Buttons).forEach((button) => {
+            button.addEventListener("click", (e) => {
+                if (e.target.innerHTML == "=") {
+                    string = eval(string)
+                    disVal.innerText = string;
+                } else if (e.target.innerHTML == "⌫") {
+                    string = string.slice(0, -1);
+                    disVal.innerText = string;
+                }
+                else if (e.target.innerHTML == "AC") {
+                    string = ""
+                    disVal.innerText = string;
+                }
+                else {
+                    string = string + e.target.innerHTML;
+                    disVal.innerText = string;
+                }
+            });
+        });
+
+
+
+    </script>
+</body>
+
+</html>
